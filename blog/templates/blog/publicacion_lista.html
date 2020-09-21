@@ -9,7 +9,7 @@
                             <div class="date">
                                 <p>publicado: {{ publicacion.fechapublicacion }}</p>
                             </div>
-                            <h2><a href="{% url 'detalle_publicacion' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h2>
+                            <h2><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h2>
                             <p>{{ publicacion.texto|linebreaksbr }}</p>
                         </div>
                     {% endfor %}
