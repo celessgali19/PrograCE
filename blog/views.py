@@ -24,7 +24,7 @@ def publicacion_nueva(request):
             publicacion.autor = request.user
             publicacion.fechapublicacion = timezone.now()
             publicacion.save()
-            return redirect('detalle_publicacion', pk=publicacion.pk)
+            return redirect('publicacion_detalle', pk=publicacion.pk)
     else:
         form = PublicacionForm()
     return render(request, 'blog/publicacion_editar.html', {'form': form})
@@ -38,7 +38,7 @@ def publicacion_editar(request, pk):
             publicacion.autor = request.user
             publicacion.fechapublicacion = timezone.now()
             publicacion.save()
-            return redirect('detalle_publicacion', pk=publicacion.pk)
+            return redirect('publicacion_detalle', pk=publicacion.pk)
     else:
         form = PublicacionForm(instance=publicacion)
     return render(request, 'blog/publicacion_editar.html', {'form': form})
